@@ -1,0 +1,16 @@
+<idea-plugin>
+    <id>dev.codewhere.jetbrains</id>
+    <vendor>CodeWhere</vendor>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <actions>
+        <action
+                id="CodeWhere.CopyEditorContext"
+                class="dev.codewhere.jetbrains.actions.CopyCodeWhereDescriptionAction"
+                text="Copy CodeWhere Context"
+                description="Copies a deterministic JSON snapshot for the current editor location or selection">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+        </action>
+    </actions>
+</idea-plugin>
