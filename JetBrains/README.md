@@ -6,47 +6,29 @@ Bootstrap for a JetBrains plugin that targets the editor right-click menu and st
 
 - A modern Gradle IntelliJ Platform project scaffold under `JetBrains/`
 - A registered editor popup action: `Copy CodeWhere Context`
-- A bootstrap context extractor that copies structured JSON for the current file, caret, line, and selection
+- A context extractor that copies compact semantic text for the current file, symbol, and line range
 
 ## Current behavior
 
 Right-click inside the editor and run `Copy CodeWhere Context`.
 
-The action copies a bootstrap payload like this to the clipboard:
+The action copies a compact payload like this to the clipboard:
 
-```json
-{
-  "schemaVersion": "bootstrap-v1",
-  "file": {
-    "path": "/path/to/file.py",
-    "name": "file.py",
-    "languageId": "Python"
-  },
-  "caret": {
-    "offset": 120,
-    "line": 10,
-    "column": 5
-  },
-  "selection": {
-    "hasSelection": true,
-    "startOffset": 95,
-    "endOffset": 140,
-    "selectedText": "..."
-  },
-  "context": {
-    "lineText": "def example():"
-  }
-}
+```text
+path: src/main/java/dev/codewhere/jetbrains/actions/CopyCodeWhereDescriptionAction.java
+symbol: CopyCodeWhereDescriptionAction.actionPerformed
+lines: 32-48
+anchor: CopyPasteManager.getInstance().setContents(new StringSelection(snapshot.toPlainText()));
 ```
 
-This is intentionally a thin starting point. It proves the editor integration and gives you a deterministic payload surface to evolve into a richer semantic description later.
+The payload is intentionally small and optimized for coding agents: project-relative path, enclosing symbol path when available, a stable line range, and a single-line anchor only when it adds value.
 
 ## Project layout
 
 - `build.gradle.kts` configures the IntelliJ Platform Gradle plugin
 - `src/main/resources/META-INF/plugin.xml` registers the plugin action
 - `src/main/java/dev/codewhere/jetbrains/actions/CopyCodeWhereDescriptionAction.java` wires the UI action to clipboard copy
-- `src/main/java/dev/codewhere/jetbrains/context/` contains the bootstrap snapshot model and builder
+- `src/main/java/dev/codewhere/jetbrains/context/` contains the context snapshot model and builder
 
 ## Requirements
 

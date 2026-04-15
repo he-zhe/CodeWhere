@@ -45,13 +45,13 @@ public final class CopyCodeWhereDescriptionAction extends DumbAwareAction {
             return;
         }
 
-        CopyPasteManager.getInstance().setContents(new StringSelection(snapshot.toJson()));
+        CopyPasteManager.getInstance().setContents(new StringSelection(snapshot.toPlainText()));
 
         Notifications.Bus.notify(
                 new Notification(
                         "CodeWhere",
                         "CodeWhere context copied",
-                        "Copied bootstrap JSON for the current editor location or selection.",
+                        "Copied semantic editor context for the current location or selection.",
                         NotificationType.INFORMATION
                 ),
                 event.getProject()
