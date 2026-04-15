@@ -10,6 +10,7 @@
                 class="dev.codewhere.jetbrains.actions.CopyCodeWhereDescriptionAction"
                 text="Copy CodeWhere Context"
                 description="Copies a compact semantic reference for the current editor location or selection">
+            <keyboard-shortcut keymap="$default" first-keystroke="control shift C"/>
             <add-to-group group-id="EditorPopupMenu" anchor="last"/>
         </action>
     </actions>
