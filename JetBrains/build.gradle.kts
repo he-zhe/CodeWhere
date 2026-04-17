@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "dev.codewhere"
-version = "0.1.0-SNAPSHOT"
+version = "0.1.0"
 
 java {
     toolchain {
@@ -22,7 +22,7 @@ repositories {
 
 dependencies {
     intellijPlatform {
-        intellijIdeaCommunity("2025.2.6.1") {
+        intellijIdeaCommunity("2024.2.5") {
             useInstaller = false
         }
     }
@@ -35,7 +35,18 @@ intellijPlatform {
         description = "Deterministic, local editor-context capture for IntelliJ-based IDEs."
 
         ideaVersion {
-            sinceBuild = "252"
+            sinceBuild = "242"
+        }
+    }
+
+    pluginVerification {
+        ides {
+            create("IC", "2024.2.5") {
+                useInstaller = false
+            }
+            create("IC", "2025.2.6.1") {
+                useInstaller = false
+            }
         }
     }
 }

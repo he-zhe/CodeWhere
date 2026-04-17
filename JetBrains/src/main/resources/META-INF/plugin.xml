@@ -1,6 +1,6 @@
 <idea-plugin>
     <id>dev.codewhere.jetbrains</id>
-    <vendor>CodeWhere</vendor>
+    <vendor url="https://plugins.jetbrains.com/vendor/CodeWhere">CodeWhere</vendor>
 
     <depends>com.intellij.modules.platform</depends>
 
