@@ -1,4 +1,4 @@
-package dev.codewhere.jetbrains.actions;
+package com.hezhe.codewhere.jetbrains.actions;
 
 import com.intellij.notification.Notification;
 import com.intellij.notification.NotificationType;
@@ -8,8 +8,8 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.ide.CopyPasteManager;
 import com.intellij.openapi.project.DumbAwareAction;
-import dev.codewhere.jetbrains.context.EditorContextSnapshot;
-import dev.codewhere.jetbrains.context.EditorContextSnapshotBuilder;
+import com.hezhe.codewhere.jetbrains.context.EditorContextSnapshot;
+import com.hezhe.codewhere.jetbrains.context.EditorContextSnapshotBuilder;
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.datatransfer.StringSelection;

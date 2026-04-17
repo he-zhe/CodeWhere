@@ -3,7 +3,7 @@ plugins {
     id("org.jetbrains.intellij.platform") version "2.12.0"
 }
 
-group = "dev.codewhere"
+group = "com.hezhe.codewhere"
 version = "0.1.0"
 
 java {

@@ -1,4 +1,4 @@
-package dev.codewhere.jetbrains.context;
+package com.hezhe.codewhere.jetbrains.context;
 
 import org.jetbrains.annotations.Nullable;
 

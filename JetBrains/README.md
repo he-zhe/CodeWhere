@@ -15,7 +15,7 @@ Right-click inside the editor and run `Copy CodeWhere Context`.
 The action copies a compact payload like this to the clipboard:
 
 ```text
-path: src/main/java/dev/codewhere/jetbrains/actions/CopyCodeWhereDescriptionAction.java
+path: src/main/java/com/hezhe/codewhere/jetbrains/actions/CopyCodeWhereDescriptionAction.java
 symbol: CopyCodeWhereDescriptionAction.actionPerformed
 lines: 32-48
 anchor: CopyPasteManager.getInstance().setContents(new StringSelection(snapshot.toPlainText()));
@@ -27,8 +27,8 @@ The payload is intentionally small and optimized for coding agents: project-rela
 
 - `build.gradle.kts` configures the IntelliJ Platform Gradle plugin
 - `src/main/resources/META-INF/plugin.xml` registers the plugin action
-- `src/main/java/dev/codewhere/jetbrains/actions/CopyCodeWhereDescriptionAction.java` wires the UI action to clipboard copy
-- `src/main/java/dev/codewhere/jetbrains/context/` contains the context snapshot model and builder
+- `src/main/java/com/hezhe/codewhere/jetbrains/actions/CopyCodeWhereDescriptionAction.java` wires the UI action to clipboard copy
+- `src/main/java/com/hezhe/codewhere/jetbrains/context/` contains the context snapshot model and builder
 
 ## Requirements
 

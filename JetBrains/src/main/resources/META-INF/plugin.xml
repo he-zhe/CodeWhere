@@ -1,5 +1,5 @@
 <idea-plugin>
-    <id>dev.codewhere.jetbrains</id>
+    <id>com.hezhe.codewhere.jetbrains</id>
     <vendor url="https://plugins.jetbrains.com/vendor/CodeWhere">CodeWhere</vendor>
 
     <depends>com.intellij.modules.platform</depends>
@@ -7,10 +7,11 @@
     <actions>
         <action
                 id="CodeWhere.CopyEditorContext"
-                class="dev.codewhere.jetbrains.actions.CopyCodeWhereDescriptionAction"
+                class="com.hezhe.codewhere.jetbrains.actions.CopyCodeWhereDescriptionAction"
                 text="Copy CodeWhere Context"
                 description="Copies a compact semantic reference for the current editor location or selection">
-            <keyboard-shortcut keymap="$default" first-keystroke="control shift C"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="alt shift C"/>
+            <keyboard-shortcut keymap="Mac OS X" first-keystroke="control shift C"/>
             <add-to-group group-id="EditorPopupMenu" anchor="last"/>
         </action>
     </actions>
