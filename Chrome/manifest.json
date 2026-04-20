@@ -17,6 +17,9 @@
       "48": "icons/icon-48.png"
     }
   },
+  "host_permissions": [
+    "https://github.com/*"
+  ],
   "content_scripts": [
     {
       "matches": [
@@ -40,10 +43,7 @@
         "icons/icon-32.png"
       ],
       "matches": [
-        "https://github.com/*/*/blob/*",
-        "https://github.com/*/*/blame/*",
-        "https://github.com/*/*/pull/*/files",
-        "https://github.com/*/*/commit/*"
+        "https://github.com/*"
       ]
     }
   ]
