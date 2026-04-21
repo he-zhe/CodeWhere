@@ -6,3 +6,6 @@ build/
 out/
 *.iml
 .DS_Store
+*.crx
+*.pem
+*.zip
