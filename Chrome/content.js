@@ -50,15 +50,22 @@
 
   function syncBlobButton() {
     const rawButton = document.querySelector('a[data-testid="raw-button"]');
-    if (!rawButton) {
+    const rawSlot = rawButton?.parentElement;
+    const group = rawSlot?.parentElement;
+    if (
+      !rawButton ||
+      !rawSlot ||
+      !group ||
+      !group.querySelector(
+        '[data-testid="copy-raw-button"], [data-testid="download-raw-button"]'
+      )
+    ) {
       return;
     }
 
-    const group =
-      rawButton.closest(".prc-ButtonGroup-ButtonGroup-vFUrY") ||
-      rawButton.parentElement?.parentElement;
-
-    if (!group || group.querySelector('[data-codewhere-button="blob"]')) {
+    // GitHub hashes Primer class names, so anchor off the stable raw-action
+    // test ids and the local DOM structure instead of a generated class.
+    if (group.querySelector('[data-codewhere-button="blob"]')) {
       return;
     }
 
@@ -67,7 +74,7 @@
     wrapper.dataset.codewhereButton = "blob";
     wrapper.appendChild(createButton(() => buildBlobContext()));
 
-    group.insertBefore(wrapper, rawButton.parentElement || rawButton);
+    group.insertBefore(wrapper, rawSlot);
   }
 
   function syncDiffButtons() {
