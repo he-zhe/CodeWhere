@@ -1,0 +1,73 @@
+{
+  "name": "codewhere-vscode",
+  "displayName": "CodeWhere",
+  "description": "Copy a compact reference to the current file, symbol, and line range for AI assistants, code review, and team communication.",
+  "version": "0.1.1",
+  "publisher": "he-zhe",
+  "license": "MIT",
+  "icon": "resources/codewhere-128.png",
+  "homepage": "https://github.com/he-zhe/CodeWhere/tree/main/VSCode",
+  "bugs": {
+    "url": "https://github.com/he-zhe/CodeWhere/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/he-zhe/CodeWhere.git"
+  },
+  "keywords": [
+    "ai",
+    "assistant",
+    "clipboard",
+    "code reference",
+    "context",
+    "llm",
+    "review"
+  ],
+  "engines": {
+    "vscode": "^1.88.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:codewhere.copyContext"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "codewhere.copyContext",
+        "title": "Copy CodeWhere Context",
+        "category": "CodeWhere"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "codewhere.copyContext",
+          "group": "navigation@99",
+          "when": "editorTextFocus"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "codewhere.copyContext",
+        "key": "alt+shift+c",
+        "mac": "ctrl+shift+c",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "test": "npm run compile && node --test dist/snapshot.test.js",
+    "vscode:prepublish": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.3",
+    "@types/vscode": "^1.88.0",
+    "typescript": "^5.8.3"
+  }
+}

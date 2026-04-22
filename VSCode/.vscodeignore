@@ -1,0 +1,8 @@
+.gitignore
+node_modules/**
+src/**
+tsconfig.json
+package-lock.json
+dist/**/*.map
+dist/**/*.test.js
+dist/**/*.test.js.map

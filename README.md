@@ -1,17 +1,16 @@
 # CodeWhere
 
-CodeWhere is a local-first developer tooling project. This repository currently contains GitHub and JetBrains integrations that capture a compact, deterministic description of the current file location or selection and copy it to the clipboard for use with coding agents and other developer workflows.
+CodeWhere is a local-first developer tooling project. This repository contains editor and browser integrations that capture a compact, deterministic description of the current file location or selection and copy it to the clipboard for use with coding agents and other developer workflows.
 
-## Current implementation
-
-The repository currently includes two implementations:
+## Current implementations
 
 - `JetBrains/`: a JetBrains plugin for IntelliJ-based IDEs
+- `VSCode/`: a Visual Studio Code extension
 - `Chrome/`: a Chrome extension for GitHub file and diff views
 
-## What the JetBrains plugin does
+## What the IDE plugins do
 
-The plugin adds an editor action named `Copy CodeWhere Context`. When triggered from the editor context menu, it copies a small text payload describing the current file and location:
+Each IDE plugin adds an editor action named `Copy CodeWhere Context`. When triggered from the editor context menu, it copies a small text payload describing the current file and location:
 
 ```text
 path: src/main/java/com/hezhe/codewhere/jetbrains/actions/CopyCodeWhereDescriptionAction.java
@@ -43,10 +42,6 @@ Current scope:
 - pull request and commit diff pages with one button per file header
 - line ranges from text selection or GitHub URL anchors, with a first-line fallback when no range is selected
 - no `symbol` field yet because GitHub DOM data is not a reliable syntax-analysis source
-
-## Future plan
-
-- VS Code plugin
 
 ## License
 
