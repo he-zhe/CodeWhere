@@ -4,13 +4,16 @@ Copy a compact reference to the code you are looking at in Visual Studio Code.
 
 CodeWhere captures the current file path, enclosing symbol, selected or current line range, and a short anchor line, then copies that context to your clipboard in a format that is easy to paste into AI assistants, code reviews, bug reports, and team chat.
 
+## Screenshot
+
+![CodeWhere in VS Code](https://raw.githubusercontent.com/he-zhe/CodeWhere/main/demo/VSCode.png)
+
 ## Example Output
 
 ```text
-path: src/services/auth.ts
-symbol: AuthService.login
-lines: 42-57
-anchor: const token = await this.exchangeCode(code);
+path: VSCode/src/context.ts
+symbol: collectLineTexts
+lines: 68-78
 ```
 
 ## How To Use

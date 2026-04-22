@@ -2,6 +2,11 @@
 
 All notable changes to this extension will be documented in this file.
 
+## [0.1.2] - 2026-04-21
+
+- Added a polished VS Code screenshot to the Marketplace README.
+- Updated the example output in the README to match the current extension behavior for the showcased selection.
+
 ## [0.1.1] - 2026-04-21
 
 - Rewrote the Marketplace description to focus on Visual Studio Code users instead of development details.
